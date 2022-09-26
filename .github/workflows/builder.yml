@@ -5,8 +5,8 @@ on:
     types: [started]
     
 env:
-  ROM_LINK: https://sourceforge.net/projects/evolution-x/files/raphael/evolution_raphael-ota-tp1a.220905.004.a2-09261653-unsigned.zip/download
-  ROM_LINK: https://sourceforge.net/projects/evolution-x/files/raphael/evolution_raphael-ota-tp1a.220905.004.a2-09261653-unsigned.zip/download
+  ROM_LINK: https://dl.google.com/developers/android/tm/images/gsi/gsi_gms_arm64-exp-T1B1.220819.006-9012527-0b3ddd9e.zip
+  ROM_LINK: https://dl.google.com/developers/android/tm/images/gsi/gsi_gms_arm64-exp-T1B1.220819.006-9012527-0b3ddd9e.zip
   ROM_TYPE: Generic
   BUILD_AB: true
   BUILD_AONLY: false
