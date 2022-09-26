@@ -5,8 +5,8 @@ on:
     types: [started]
     
 env:
-  ROM_LINK: your rom's direct link
-  ROM_LINK: https://downloads.sourceforge.net/project/kevios12a40roms/RELEASE/evolution_a40-ota-rq3a.210905.001-09191220-unofficial-unsigned.zip?ts=gAAAAABhSKfwG2QmwbDIWKLOsgwwVZpzfw45QWhlvk2t-51g5yZWGXMnwAyLCRp3mGdunmuAJJO_fBy4HdKWcfKfI9YvuCEywg%3D%3D&use_mirror=autoselect&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fkevios12a40roms%2Ffiles%2FRELEASE%2Fevolution_a40-ota-rq3a.210905.001-09191220-unofficial-unsigned.zip%2Fdownload
+  ROM_LINK: https://sourceforge.net/projects/evolution-x/files/raphael/evolution_raphael-ota-tp1a.220905.004.a2-09261653-unsigned.zip/download
+  ROM_LINK: https://sourceforge.net/projects/evolution-x/files/raphael/evolution_raphael-ota-tp1a.220905.004.a2-09261653-unsigned.zip/download
   ROM_TYPE: Generic
   BUILD_AB: true
   BUILD_AONLY: false
@@ -44,7 +44,7 @@ jobs:
               sudo bash setup.sh
        
        - name: Downloading rom and building A Only GSI
-         if: env.BUILD_AONLY == 'true'
+         if: env.BUILD_AONLY == 'false'
          run: sudo ./ErfanGSIs/url2GSI.sh -a $ROM_LINK $ROM_TYPE -d
        
        - name: 7zipping Aonly GSI
@@ -52,7 +52,7 @@ jobs:
          run: 7za a -t7z -r $ROM_AONLY ErfanGSIs/output/*
        
        - name: Uploading Aonly GSI
-         if: env.BUILD_AONLY == 'true'
+         if: env.BUILD_AONLY == 'false'
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer gof $ROM_AONLY
